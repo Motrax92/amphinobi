@@ -61,6 +61,7 @@ main{
   background:white;
   border-radius:10px;
   box-shadow:0 6px 20px rgba(6,15,30,0.08);
+
 }
 
 h1{
@@ -74,7 +75,14 @@ h2{
 p{
   line-height:1.6;
 }
-
+img{
+  max-width:25%;
+  height:auto;
+  display:flex;
+  margin-right: 0;
+  margin-left: auto;
+  
+}
 /* Boutons */
 a.button{
   display:inline-block;
@@ -122,4 +130,8 @@ footer{
 @media (max-width:600px){
   main{ margin:1rem; padding:1rem; }
   h1{ font-size:1.25rem; }
+  body::before{ background-size:auto; background-repeat: repeat; }
+  img{
+    max-width:50%;
+  }
 }
