@@ -74,15 +74,19 @@ h2{
 
 p{
   line-height:1.6;
+
 }
-img{
-  max-width:25%;
-  height:auto;
-  display:flex;
-  margin-right: 0;
+
+img {
+  width: 25%;
+  aspect-ratio: 1 / 1; /* garde un carré, devient rond avec le border-radius */
+  border-radius: 50%;
+  object-fit: cover;
+  display: block; /* ou flex si nécessaire, mais block suffit */
   margin-left: auto;
-  
+  margin-right: 0;
 }
+
 /* Boutons */
 a.button{
   display:inline-block;
@@ -126,12 +130,50 @@ footer{
   text-align:center;
 }
 
+/* ======== LAYOUT 2 COLONNES POUR LA PRÉSENTATION ======== */
+
+.amphinobi-intro {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
+
+.amphinobi-intro p {
+  margin-bottom: 1rem;
+}
+
+.amphinobi-intro img {
+  width: 230px;
+  height: 230px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 0; /* supprime le margin-left que tu avais */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+li{
+  margin-left: 1.5rem;
+  font-size:1rem;
+  line-height:1.4;
+}
+
 /* Responsive */
 @media (max-width:600px){
   main{ margin:1rem; padding:1rem; }
   h1{ font-size:1.25rem; }
   body::before{ background-size:auto; background-repeat: repeat; }
-  img{
-    max-width:50%;
-  }
+  img{max-width:50%;}
+  li{ font-size:0.9rem; margin-left: 1rem; margin-bottom: 1rem;}
 }
+  .amphinobi-intro {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .amphinobi-intro img {
+    width: 180px;
+    height: 180px;
+  }
